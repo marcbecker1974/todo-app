@@ -23,12 +23,35 @@ body {
 }
 
 .card {
+  position: relative;
   width: 100%;
   max-width: 420px;
   background: var(--card-bg);
   border-radius: 24px;
   padding: 32px 28px;
   box-shadow: 0 20px 45px rgba(74, 63, 69, 0.15);
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #f0e4e8;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.15s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.08);
 }
 
 .card__header {
@@ -227,4 +250,30 @@ body {
 .restart-btn:active {
   transform: translateY(0);
   box-shadow: 0 6px 14px rgba(74, 63, 69, 0.2);
+}
+
+body.dark-mode {
+  --bg-1: #1a1625;
+  --bg-2: #241b2e;
+  --ink: #ece4ec;
+  --card-bg: #241f2b;
+}
+
+body.dark-mode .checklist__item {
+  background: #2f2838;
+  border-color: #3c3346;
+}
+
+body.dark-mode .progress__track {
+  background: #342c3d;
+}
+
+body.dark-mode .subtitle,
+body.dark-mode .progress__label,
+body.dark-mode .celebration__subtext {
+  color: #b6a9b6;
+}
+
+body.dark-mode .theme-toggle {
+  background: #342c3d;
 }

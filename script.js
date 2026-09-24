@@ -27,9 +27,15 @@ const progressFillEl = document.getElementById("progressFill");
 const progressLabelEl = document.getElementById("progressLabel");
 const celebrationEl = document.getElementById("celebration");
 const restartBtnEl = document.getElementById("restartBtn");
+const themeToggleEl = document.getElementById("themeToggle");
 
 restartBtnEl.addEventListener("click", () => {
   location.reload();
+});
+
+themeToggleEl.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+  themeToggleEl.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
 });
 
 let state = { checked: [] };
