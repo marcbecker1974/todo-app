@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Routine Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="card">
+    <header class="card__header">
+      <h1>🌅 Good Morning</h1>
+      <p class="subtitle">One small step at a time — you've got this.</p>
+    </header>
+
+    <section class="progress" aria-hidden="false">
+      <div class="progress__track">
+        <div id="progressFill" class="progress__fill"></div>
+      </div>
+      <p id="progressLabel" class="progress__label">0 / 15 done</p>
+    </section>
+
+    <ul id="checklist" class="checklist"></ul>
+
+    <section id="celebration" class="celebration hidden">
+      <div class="sparkles" aria-hidden="true">
+        <span>✨</span><span>🎉</span><span>⭐</span><span>✨</span><span>🎉</span>
+      </div>
+      <div class="unicorn">🦄</div>
+      <p class="celebration__text">YEAH!</p>
+      <p class="celebration__subtext">You did it. Go seize the day!</p>
+    </section>
+  </main>
+
+<script src="script.js"></script>
+</body>
+</html>
