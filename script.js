@@ -26,6 +26,11 @@ const checklistEl = document.getElementById("checklist");
 const progressFillEl = document.getElementById("progressFill");
 const progressLabelEl = document.getElementById("progressLabel");
 const celebrationEl = document.getElementById("celebration");
+const restartBtnEl = document.getElementById("restartBtn");
+
+restartBtnEl.addEventListener("click", () => {
+  location.reload();
+});
 
 let state = { checked: [] };
 
