@@ -22,6 +22,33 @@ const TIERS = {
   GREEN: "#2a9d8a"
 };
 
+const clockHoursEl = document.getElementById("clockHours");
+const clockColonEl = document.getElementById("clockColon");
+const clockMinutesEl = document.getElementById("clockMinutes");
+
+const cetTimeFormatter = new Intl.DateTimeFormat("en-GB", {
+  timeZone: "Europe/Berlin",
+  hour12: false,
+  hour: "2-digit",
+  minute: "2-digit",
+  second: "2-digit"
+});
+
+function updateClock() {
+  const now = new Date();
+  const parts = cetTimeFormatter.formatToParts(now).reduce((acc, part) => {
+    acc[part.type] = part.value;
+    return acc;
+  }, {});
+
+  clockHoursEl.textContent = parts.hour;
+  clockMinutesEl.textContent = parts.minute;
+  clockColonEl.classList.toggle("clock__colon--dim", Number(parts.second) % 2 === 1);
+}
+
+updateClock();
+setInterval(updateClock, 1000);
+
 const checklistEl = document.getElementById("checklist");
 const progressFillEl = document.getElementById("progressFill");
 const progressLabelEl = document.getElementById("progressLabel");
